@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faker } from '@faker-js/faker';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Typing';
+
+  randomText : string = faker.lorem.sentence();
+  onChangeInput(text:string)
+  {
+    console.log(text);
+  }
 }

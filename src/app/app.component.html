@@ -5,10 +5,10 @@
         Typing Chalenge
       </h1>
       <p class="has-text-centered">
-        Random Text
+       {{randomText}}
       </p>
       <div class="field">
-        <input type="text" class="input">
+        <input type="text" class="input" (input)="onChangeInput($event.target.value)">
       </div>
       <div class="box has-text-centered">
         <h1 class="title">Sucsess!</h1>
