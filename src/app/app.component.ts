@@ -7,10 +7,21 @@ import { faker } from '@faker-js/faker';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  result : boolean = false;
   randomText : string = faker.lorem.sentence();
+  inputText : string = '';
   onChangeInput(text:string)
   {
-    console.log(text);
+    this.inputText = text;
+  }
+
+  compair(letterIntered : string,inputTextIndex : string):string
+  {
+    if(!inputTextIndex)
+    {
+      return 'pending';
+    }
+    return letterIntered === inputTextIndex ? 'correct' : 'incorrect';
+
   }
 }

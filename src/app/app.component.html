@@ -5,14 +5,16 @@
         Typing Chalenge
       </h1>
       <p class="has-text-centered">
-       {{randomText}}
+        <span [class]="compair(letter,inputText[i])" *ngFor="let letter of randomText.split(''); let i = index">{{letter}}</span>
       </p>
       <div class="field">
         <input type="text" class="input" (input)="onChangeInput($event.target.value)">
       </div>
-      <div class="box has-text-centered">
-        <h1 class="title">Sucsess!</h1>
+      <div *ngIf="inputText === randomText" class="box has-text-centered">
+        <h1  class="title">Succsess!</h1>
       </div>
     </div>
   </div>
 </div>
+<br/>
+{{randomText}}
